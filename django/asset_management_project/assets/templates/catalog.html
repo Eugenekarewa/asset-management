@@ -1,0 +1,49 @@
+<!-- assets/templates/catalog.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Asset Catalog</title>
+    <!-- Add your CSS links or stylesheets here -->
+    <style>
+        /* Add your custom CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+            margin: 20px;
+            padding: 20px;
+        }
+        .item {
+            background-color: #ffffff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .item h2 {
+            margin-top: 0;
+        }
+        .item p {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Asset Catalog</h1>
+
+    <!-- Display items from the database -->
+    {% for item in items %}
+    <div class="item">
+        <h2>{{ item.name }}</h2>
+        <p><strong>Quantity:</strong> {{ item.quantity }}</p>
+        <p><strong>State:</strong> {{ item.state }}</p>
+        <p><strong>Serial Number:</strong> {{ item.serial_number }}</p>
+        <!-- Add more details as needed -->
+    </div>
+    {% empty %}
+    <p>No items available.</p>
+    {% endfor %}
+</body>
+</html>
+
